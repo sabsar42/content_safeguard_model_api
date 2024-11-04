@@ -83,7 +83,7 @@ async def verify_token(authorization: Optional[str] = Header(None)):
     return "Any token accepted for testing"
 
 
-@app.post("/predict")
+@app.post("/predict-text")
 async def predict(request: InferenceRequest,
                   token: str = Header(None, alias="Authorization")):
     await verify_token(token)
